@@ -13,7 +13,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_HOST=db
     ports:
-      - "${POSTGRES_PORT}:5432"
+      - "5455:5432" 
     volumes:
       - postgres_data:/var/lib/postgresql/data
     command: ["bash", "-c", "env && docker-entrypoint.sh postgres"]
