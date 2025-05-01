@@ -9,28 +9,28 @@
   - [ ] Set up logging
   - [ ] Configure media and static files
 - [ ] Set up database
-  - [ ] Configure PostgreSQL connection
-  - [ ] Create initial migrations
+  - [x] Configure PostgreSQL connection
+  - [x] Create initial migrations
   - [ ] Set up database backup strategy
 - [ ] Docker configuration
   - [x] Create Dockerfile
-  - [ ] Set up docker-compose.yml
-  - [ ] Configure development environment
+  - [x] Set up docker-compose.yml
+  - [x] Configure development environment
 
 ### User Management App
-- [ ] User model implementation
-  - [ ] Create custom user model
-  - [ ] Add profile model
-  - [ ] Set up user preferences
-- [ ] Authentication system
+- [x] User model implementation
+  - [x] Create custom user model
+  - [ ] Add profile model-SKIP
+  - [ ] Set up user preferences-SKIP
+- [x] Authentication system
   - [x] Configure JWT authentication
-  - [ ] Implement registration endpoint
-  - [ ] Implement login endpoint
-  - [ ] Add password reset functionality
-- [ ] Profile management
-  - [ ] Create profile endpoints
-  - [ ] Add user settings
-  - [ ] Implement practice preferences
+  - [x] Implement registration endpoint
+  - [x] Implement login endpoint
+  - [ ] Add password reset functionality-SKIP
+- [ ] Profile management-SKIP
+  - [ ] Create profile endpoints-SKIP
+  - [ ] Add user settings-SKIP
+  - [ ] Implement practice preferences-SKIP
 
 ## Phase 2: Core Features (3 weeks)
 
@@ -123,7 +123,7 @@
 - [x] Initial Django settings
 - [x] Docker setup
 - [x] JWT authentication configuration
-- [ ] User management implementation
+- [x] User management implementation
 - [ ] Sheet management implementation
 - [ ] Tuner implementation
 - [ ] Practice room implementation
