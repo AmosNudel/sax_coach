@@ -1,25 +1,23 @@
 import React from 'react';
-import { useAppSelector, useAppDispatch } from './store';
-import { increment, decrement, incrementByAmount } from './features/counter/counterSlice';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './features/auth/Login';
+import Register from './features/auth/Register';
+import { useAppSelector } from './store';
 import './App.css';
 
-function App() {
-  const count = useAppSelector((state) => state.counter.value);
-  const dispatch = useAppDispatch();
+const App: React.FC = () => {
+  const { isAuthenticated } = useAppSelector((state) => state.auth);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Redux TypeScript Example</h1>
-        <div>
-          <button onClick={() => dispatch(decrement())}>-</button>
-          <span>{count}</span>
-          <button onClick={() => dispatch(increment())}>+</button>
-        </div>
-        <button onClick={() => dispatch(incrementByAmount(5))}>Add 5</button>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={!isAuthenticated ? <Login /> : <Navigate to="/dashboard" />} />
+        <Route path="/register" element={!isAuthenticated ? <Register /> : <Navigate to="/dashboard" />} />
+        <Route path="/dashboard" element={isAuthenticated ? <div>Dashboard</div> : <Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to={isAuthenticated ? "/dashboard" : "/login"} />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
